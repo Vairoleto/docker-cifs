@@ -3,11 +3,15 @@ Docker alpine container with cifs-utils to mount a windows share, and rsync to m
 
 Run with the following flags:
 
+```
 docker run -d --privileged --cap-add=MKNOD --cap-add=SYS_ADMIN --device=/dev/fuse vairoleto/docker-cifs
+```
 
 This container have a mount folder that can be used to share files between other containers and the windows share. Just add the "-v" flag
 
+```
 docker run -d -v /linuxFolder:/mnt/openvpn --privileged --cap-add=MKNOD --cap-add=SYS_ADMIN --device=/dev/fuse vairoleto/docker-cifs
+```
 
 Edit the windows path and credentials on the Dockerfile.
 
